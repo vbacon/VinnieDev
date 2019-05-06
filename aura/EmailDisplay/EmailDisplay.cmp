@@ -1,0 +1,16 @@
+<aura:component implements="lightning:isUrlAddressable,forceCommunity:availableForAllPageTypes" controller="TaskController">
+	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:attribute name="theEmail" type="Task" description="The email to display"/>
+    <aura:attribute name="TaskId"  type="Id"/>
+    
+    <h2>Passed ID = {!v.pageReference.state.Id}</h2>
+
+    <h2>Retrieved ID = {!v.theEmail.Id}</h2>
+     
+    <p>Email subject = {!v.theEmail.Subject}</p>
+    
+    <p>Email description = {!v.theEmail.Description}</p>
+    
+</aura:component>

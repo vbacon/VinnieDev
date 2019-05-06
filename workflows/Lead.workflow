@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>NewLeadNotification</fullName>
+        <description>NewLeadNotification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>greg@damaone.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jake@damaone.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Lead_Create_Workflow</template>
+    </alerts>
+    <rules>
+        <fullName>NewLeadNotification</fullName>
+        <actions>
+            <name>NewLeadNotification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.LastName</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

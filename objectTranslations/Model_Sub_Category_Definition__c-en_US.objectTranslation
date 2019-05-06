@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Model Sub Category Definition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Model Sub Category Definitions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Order --></label>
+        <name>Display_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Category Definition --></label>
+        <name>Model_Category_Definition__c</name>
+        <relationshipLabel><!-- Model Sub Category Definitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Score Guidance --></label>
+        <name>Score_Guidance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Category Score --></label>
+        <name>Sub_Category_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Category Weight --></label>
+        <name>Sub_Category_Weight__c</name>
+    </fields>
+    <layouts>
+        <layout>Model Sub Category Definition Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Model Sub Category Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

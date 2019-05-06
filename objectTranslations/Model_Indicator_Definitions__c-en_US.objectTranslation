@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Model Indicator Definition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Model Indicator Definitions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Order --></label>
+        <name>Display_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indicator Weight --></label>
+        <name>Indicator_Weight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Sub Category Definition --></label>
+        <name>Model_Sub_Category_Definition__c</name>
+        <relationshipLabel><!-- Model Indicator Definitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Score Guidance High --></label>
+        <name>Score_Guidance_High__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Guidance Low --></label>
+        <name>Score_Guidance_Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Guidance Mid --></label>
+        <name>Score_Guidance_Mid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Guidance --></label>
+        <name>Score_Guidance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Labels --></label>
+        <name>Score_Labels__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <layouts>
+        <layout>Model Indicator Definition Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

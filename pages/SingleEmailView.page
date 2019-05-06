@@ -1,0 +1,74 @@
+<apex:page sidebar="false" standardController="Task" extensions="SingleEmailViewController" readOnly="true">
+    <html>
+        <head>
+            <apex:slds />
+            <style>
+                .padme {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            </style>
+
+        </head>
+        
+        <body style="padding:30px;background: #fff !important;">
+            
+           <div>
+              
+                <apex:form rendered="{!IF(OR($User.UITheme=='Theme4d',$User.UITheme=='Theme4u'),false,true)}">
+                    <apex:commandButton action="{!cancel}" value="Go Back" styleClass="slds-button slds-button_brand" />
+                </apex:form>
+
+                <div class="padme">
+                    <span class="slds-text-heading_large">Email Details </span>
+                </div>                
+                
+                <div class="padme">
+                    <span class="slds-text-heading_medium">Attachments:</span>
+                </div>
+                <apex:dataTable value="{!theAttachments}" var="attach" rendered="{!showAttachments}">
+                    <div class="padme">
+	                    <apex:column >
+	                        &nbsp;&nbsp;<apex:outputText value="{!attach.Name}" />
+	                        &nbsp;&nbsp;<a href="{!URLFOR($Action.Attachment.Download, attach.Id)}" target="_blank" styleClass="btn"><em>(download)</em></a>
+	                    </apex:column>
+	                </div>
+	            </apex:dataTable>
+  
+                &nbsp;&nbsp;<em><apex:outputText value="No attachments" rendered="{!!showAttachments}" /></em>
+                    
+                <div class="padme">
+                    <span class="slds-text-heading_medium">Contact: </span>
+                    <apex:outputText value="{!contactName}" />
+                    
+                </div>
+
+                <div class="padme">
+                    <span class="slds-text-heading_medium">Date: </span>
+                    <apex:outputText value="{0,date,yyyy'-'MM'-'dd}">
+                       <apex:param value="{!theTask.ActivityDate}" />
+                    </apex:outputText>
+                </div>
+                            
+                <div class="padme">
+                    <span class="slds-text-heading_medium">Subject:</span>
+                    <strong>{!theTask.Subject}</strong>
+                </div>
+                    
+                <div class="padme">
+                    <span class="slds-text-heading_medium">Email Body:</span><br />
+                    <!--  <apex:outputText value="{!modDescription}" style="display:block;" />  -->
+                </div>
+                
+	            <div>
+	                <apex:repeat value="{!modDescription}" var="line">
+	                    <apex:outputText value="{!line}" /> 
+	                    <br />
+	                </apex:repeat>
+                </div>
+
+            </div>
+              
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,670 @@
+<apex:page controller="RiskEvaluationController" docType="html-5.0" id="pageContainer" sidebar="false" showHeader="true">
+    <head>
+        <apex:slds />
+        <apex:stylesheet value="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+        <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" />
+        <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            input[type="checkbox"]
+            {
+            width: 20px; /*Desired width*/
+            height: 20px; /*Desired height*/
+            }
+            
+            .slds-scope h1{
+            font-size: 30px;
+            }
+            .slds-scope h4{
+            font-size: 16px;
+            color: red;
+            }
+            .slds-scope body, .slds-scope:not(html) {
+            background: rgb(244, 246, 249);
+            }
+            .page_wrapper{
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            }
+            .slds-scope .slds-card{
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            }
+            .slds-scope .slds-card__header{
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #d8dde6;
+            background:  #e0e5ee;
+            }
+            .slds-scope .slds-text-heading_small{
+            font-size: 20px;
+            }
+            h2.heading_section{
+            font-size: 18px;
+            display: block;
+            border-bottom: 1px solid #d8dde6;
+            margin-bottom: 15px;
+            }
+            .slds-scope .slds-form-element__label{
+            font-size: 1rem;
+            }
+            .slds-form-element__control .lookupInput input{
+            width: 100%;
+            padding-right: 35px;
+            }
+            .slds-form-element__control .lookupInput a{
+            border: none;
+            background: none;
+            position: absolute;
+            width: 0;
+            padding: 0;
+            }
+            .slds-form-element__control .lookupInput a:after{
+            content: "";
+            width: 18px;
+            height: 18px;
+            
+            right: 7px;
+            position: absolute;
+            background-size: contain;
+            top: 6px;
+            background-repeat: no-repeat;
+            }
+            .slds-scope .slds-input{
+            width:25%;
+            }
+            .wrapper{
+            border-bottom : 1px solid #ececec;
+            padding-top: 15px;
+            }
+            
+            .slds-form-element__control .slds-input a:after{
+            content: "";
+            width: 18px;
+            height: 18px;
+            
+            right: 7px;
+            position: absolute;
+            background-size: contain;
+            top: 6px;
+            background-repeat: no-repeat;
+            }
+            .slds-scope .slds-button__icon{
+            height: auto;
+            }
+            .slds-scope .slds-medium-show{
+            display: inline-block;
+            }
+            .slds-scope .HOA_COA_section .fieldset{
+            width: 100%;
+            display: inline-block;
+            }
+            .slds-file-selector__text{
+            word-break: break-all;
+            }
+            .messageCell{
+            text-align: center;
+            }
+            .messageText{
+            
+            }
+            .slds-scope caption, .slds-scope th, .slds-scope td {
+            text-align: center;
+            }
+            
+            .slds-scope .slds-textarea{
+            width: 80%;
+            height: 70px;
+            
+            }
+            
+            .wrapHeader{
+            text-align: left;
+            border-bottom: 2px solid #ececec;
+            background-color: #c0c0c0;
+            }
+            
+            .leftAligned{
+            text-align :left;
+            }
+            
+            @media (max-width: 767px){
+            
+            .table_scroll{
+            overflow: auto;
+            }
+            .table_scroll table thead th{
+            width: 160px;
+            }
+            }
+        </style>
+    </head>
+    
+    <apex:form id="form" >
+        <apex:pageMessages />
+        <apex:actionFunction name="changeListId" action="{!changeSubCat}" reRender="subCatHistory" >
+            <apex:param name="caName" assignTo="{!subCatHistoryCatName}" value=""/>
+        </apex:actionFunction>
+       <apex:actionFunction name="refreshList" reRender="" />
+        <div>
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__body" >
+                        <h2>
+                            <span class="slds-card__header-link slds-truncate">
+                                <span class="slds-text-heading_small"><h3 class ="heading-section" style="font-size:0.85rem; font-weight:bold;">Account Name : {!acc.name}  <span style="padding-left:20px;">Model Version: "{!modelVersion.Name}"</span> <span style="padding-left:20px;" >Account Level Score : <apex:outputtext id="accountScore" value="{!ROUND(derivedAccountScore, 2)}"></apex:outputtext></span></h3></span>
+                            </span>
+                        </h2>
+                    </div>
+                </header>
+                
+                <apex:outputPanel layout="block" rendered="{!IF($Profile.Name == 'General',false,true)}">
+                    <div>
+                        <button class="slds-button slds-button_brand " onclick="methodForAccCalc(this); return false;">Calculate Account Score</button>                
+                        <span class="messages" style="display:none;border:none;background-color:#e0e5ee">Calculating...</span>
+                        <button class="slds-button slds-button_brand " onclick="methodSave('test','test',this); return false;">Save Account Score</button>
+                        <span class="message" style="display:none;border:none;background-color:#e0e5ee">Saving...</span>
+                    </div>
+                </apex:outputPanel>
+            </div>
+            <div class="slds-tabs_default">
+                <ul class="slds-tabs_default__nav" role="tablist">
+                    <apex:repeat value="{!modelMapDisplayOrder}" var="keys">
+                        <li class="slds-tabs_default__item" title="{!modelMap[modelMapDisplayOrder[keys]].CategoryName}" role="presentation">
+                            <a class="slds-tabs_default__link allTabs" 
+                               href="javascript:void(0);"
+                               role="tab"
+                               data-target="{!modelMap[modelMapDisplayOrder[keys]].CategoryName}"
+                               tabindex="{!modelMap[modelMapDisplayOrder[keys]].modelCategory.Display_order__c}"
+                               aria-selected="true" aria-controls="{!modelMap[modelMapDisplayOrder[keys]].CategoryName}"
+                               id="{!modelMap[modelMapDisplayOrder[keys]].CategoryName}__item"
+                               onclick="changeListId('{!modelMap[modelMapDisplayOrder[keys]].CategoryName}');return false;">
+                                {!modelMap[modelMapDisplayOrder[keys]].CategoryName}
+                            </a>
+                        </li>
+                    </apex:repeat>  
+                </ul> 
+                <div id="tabContainer">     
+                    <apex:repeat value="{!modelMap}" var="keys">
+                        <!--
+                        <div id="{!keys}" class="demo-only modelPopupmain" style="height: 640px;display:none" >
+                            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                <div class="slds-modal__container modelPopup">
+                                    <header class="slds-modal__header">
+                                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><b>Category History Record</b></h2>
+                                    </header>
+                                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                        <apex:pageBlock >
+                                            <apex:pageBlockTable value="{!lstCatHistory}" var="lstCatHis">
+                                                <apex:column headerValue="Category Score" value="{!lstCatHis.Category_Score__c}"/>
+                                                <apex:column headerValue="Date Computed" value="{!lstCatHis.Date_Computed__c}"/>
+                                                <apex:column headerValue="Last Modified Date" value="{!lstCatHis.LastModifiedDate}"/>
+                                            </apex:pageBlockTable>
+                                        </apex:pageBlock>
+                                    </div>
+                                    <footer class="slds-modal__footer">
+                                        <button class="slds-button slds-button_brand okButton" onclick="hideModel();return false;">OK</button>
+                                    </footer>
+                                </div>
+                            </section>
+                            <div class="slds-backdrop slds-backdrop_open backDrop"></div>
+                        </div>
+                        -->
+                        <div id="{!modelMap[keys].CategoryName}" class="slds-tabs_default__content slds-hide" style="padding: 0;" role="tabpanel" aria-labelledby="{!modelMap[keys].CategoryName}__item">
+                            <div class="slds-scope"> 
+                                <div class="page_wrapper">
+                                    <div class="slds-card">
+                                        <div class="slds-card__header slds-grid">
+                                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                                <div class="slds-media__body">
+                                                    <h2>
+                                                        <span class="slds-card__header-link slds-truncate">
+                                                            <span class="slds-text-heading_small"><h3 class ="heading-section" style="font-size:0.85rem; font-weight:bold;"><span style="padding-left:20px;">Category Weight : "{!modelMap[keys].modelCategory.Weight__c}"</span> </h3></span>
+                                                            <div>
+                                                                <button class="slds-button slds-button_brand" style="margin-left: 45%; margin-top: -3%;" id="showCatHistory" onclick="showModel();return false;">Show Category History</button>
+                                                                <button class="slds-button slds-button_brand buttonSub" style="margin-top: -3%;" id="showSubCatHistory" onclick="showModelSub();return false;">Show Sub Category History</button>
+                                                            </div>
+                                                        </span>
+                                                        
+                                                    </h2>
+                                                </div>
+                                            </header>
+                                 
+                                            
+                                        </div>
+                                        <div id="form1" class="slds-card__body slds-card__body_inner" style="margin-top:-1%">
+                                            <apex:repeat value="{!modelMap[keys].subCatWrapperMap}" var="subKey">
+                                                <apex:outputPanel id="InfoSection">
+                                                    <script>
+                                                    </script>
+                                                    <apex:pageMessages />
+                                                    <!-- apex:actionFunction name="callMethod" action="{!refresh}" / -->
+                                                    <outputPanel id="propertyInfoSection">
+                                                        <div class="slds-grid slds-wrap">
+                                                            <div class="slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium slds-text-align_center">
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-grid slds-wrap">
+                                                            <div class="slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium wrapHeader" >
+                                                                <h3 class ="heading-section" style="font-size:0.85rem; font-weight:bold;">
+                                                                    Sub Category : "{!modelMap[keys].subCatWrapperMap[subKey].subCatName}" 
+                                                                    <span style="padding-left:20px;">Sub Category Weight : "{!modelMap[keys].subCatWrapperMap[subKey].modelSubCat.Sub_Category_Weight__c}"</span>
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <apex:repeat value="{!modelMap[keys].subCatWrapperMap[subKey].indicatorWrapperMap}" var="labelKey" >
+                                                            <div class="slds-grid slds-wrap wrapper">
+                                                                <!-- Section for name -->
+                                                                <div class="slds-size_1-of-1 slds-medium-size_2-of-5 slds-large-size_2-of-5 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+                                                                    
+                                                                    <div class="slds-grid slds-wrap slds-text-align_left slds-m-left_xx-large">
+                                                                        <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium ">
+                                                                            <label>Inherent {!modelMap[keys].subCatWrapperMap[subKey].indicatorWrapperMap[labelKey].modelIndicator.Score_Labels__c} : </label>
+                                                                            <apex:inputField label="Risk Indicator Score " value="{!modelMap[keys].subCatWrapperMap[subKey].indicatorWrapperMap[labelKey].indicatorValue.Value__c}" styleClass="slds-input" />
+                                                                        </div>
+                                                                        <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium ">
+                                                                            <label>Residual {!modelMap[keys].subCatWrapperMap[subKey].indicatorWrapperMap[labelKey].modelIndicator.Score_Labels__c} : </label>
+                                                                            <apex:inputField label="Risk Indicator Score " value="{!modelMap[keys].subCatWrapperMap[subKey].indicatorWrapperMap[labelKey].indicatorValue.Residual_Indicator_Value__c}" styleClass="slds-input" />
+                                                                        </div>
+                                                                        <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium ">
+                                                                            <ul class="slds-list--dotted">
+                                                                                <li><strong> HIGH : </strong>{!modelMap[keys].subCatWrapperMap[subKey].indicatorWrapperMap[labelKey].modelIndicator.Score_Guidance_High__c}</li>
+                                                                                <li><strong> MID : </strong>{!modelMap[keys].subCatWrapperMap[subKey].indicatorWrapperMap[labelKey].modelIndicator.Score_Guidance_Mid__c}</li>
+                                                                                <li><strong> LOW : </strong>{!modelMap[keys].subCatWrapperMap[subKey].indicatorWrapperMap[labelKey].modelIndicator.Score_Guidance_Low__c}</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="slds-col slds-size_1-of-1">
+                                                                            <label>Indicator Weight : </label>
+                                                                            <apex:outputField label="Weight Indicator" value="{!modelMap[keys].subCatWrapperMap[subKey].indicatorWrapperMap[labelKey].modelIndicator.Indicator_Weight__c}" styleClass="slds-input"  />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slds-size_1-of-1 slds-medium-size_3-of-5 slds-large-size_3-of-5 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+                                                                    <div class="slds-grid slds-wrap">
+                                                                        <div class="slds-col slds-size_1-of-6">
+                                                                            <span>Comment</span>
+                                                                        </div>
+                                                                        <div class="slds-col slds-size_5-of-6 leftAligned">
+                                                                            <apex:inputField label="Risk Indicator Comment" value="{!modelMap[keys].subCatWrapperMap[subKey].indicatorWrapperMap[labelKey].indicatorValue.Note__c}" styleClass="slds-textarea" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </apex:repeat>
+                                                        <div class="slds-grid slds-wrap wrapper">
+                                                            <div class="slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-4 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+                                                                <apex:outputLabel style="font-size:1.15em;" id="deriveField" >Inherited Derived Sub Category Score : {!ROUND(modelMap[keys].subCatWrapperMap[subKey].subCatHistory.Sub_Category_Score__c, 2)}</apex:outputLabel>
+                                                            </div>
+                                                            <div class="slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-4 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+                                                                <apex:outputLabel style="font-size:1.15em;" id="residualderiveField" >Residual Derived Sub Category Score : {!ROUND(modelMap[keys].subCatWrapperMap[subKey].resSubCatHistory.Sub_Category_Score__c, 2)}</apex:outputLabel>
+                                                            </div>
+                                                            
+                                                            <div class="slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-4 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+                                                                
+                                                                <apex:outputPanel layout="block" rendered="{!IF($Profile.Name == 'General',false,true)}">
+                                                                    <apex:outputLabel >
+                                                                        <button class="slds-button slds-button_brand buttonCal" onclick="methodCalulate('{!keys}','{!subKey}', this);  return false;">Calculate</button>
+                                                                        <span class="message" style="display:none;border:none;background-color:#FFFFFF">Calculating...</span>
+                                                                    </apex:outputLabel>
+                                                                </apex:outputPanel>
+                                                                
+                                                            </div>
+                                                            <div class="slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-4 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+                                                                <apex:outputPanel layout="block" rendered="{!IF($Profile.Name == 'General',false,true)}">
+                                                                    <button class="slds-button slds-button_brand save-btn" onclick="methodSave('{!keys}','{!subKey}', this); return false;">Save</button>
+                                                                    <span class="message" style="display:none;border:none;background-color:#FFFFFF">Saving...</span>
+                                                                </apex:outputPanel>
+                                                                
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        
+                                                        
+                                                    </outputPanel>
+                                                    
+                                                    
+                                                    
+                                                </apex:outputPanel>
+                                                
+                                                
+                                            </apex:repeat>
+                                            <div class="slds-grid slds-wrap wrapper">
+                                                <div class="slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-4 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+                                                    <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium ">
+                                                    <apex:outputLabel style="font-size:1.3em;font-weight:600;" id="deriveCat" >Inherited Category Score : {!ROUND(modelMap[keys].catHistory.Category_Score__c, 2)} </apex:outputLabel>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium ">
+                                                       <label style="font-size:1.15em;">Direction Of Risk</label>
+                                                       <apex:inputField styleClass="slds-select slds-m-left_medium" style="font-size:1.25em;width:50%;" id="riskDirection" value="{!modelMap[keys].catHistory.Direction_Of_Risk__c}" />
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-4 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+                                                    <apex:outputLabel style="font-size:1.3em;font-weight:600;" id="resDeriveCat" >Residual Category Score : {!ROUND(modelMap[keys].resCatHistory.Category_Score__c, 2)} </apex:outputLabel>
+                                                </div>
+                                                
+                                                <div class="slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-4 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+                                                    
+                                                    <apex:outputPanel layout="block" rendered="{!IF($Profile.Name == 'General',false,true)}">
+                                                        <apex:outputLabel >
+                                                            <button class="slds-button slds-button_brand buttonCal" onclick="methodForCatCalc('{!keys}',this);  return false;">Calculate Category Score</button>
+                                                            <span class="message" style="display:none;border:none;background-color:#FFFFFF">Calculating...</span>
+                                                        </apex:outputLabel>
+                                                    </apex:outputPanel>
+                                                    
+                                                </div>
+                                                <div class="slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-4 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+                                                    <apex:outputPanel layout="block" rendered="{!IF($Profile.Name == 'General',false,true)}">
+                                                        <button class="slds-button slds-button_brand" onclick="methodSave('{!keys}','test',this); return false;">Save Category Score</button>
+                                                        <span class="message" style="display:none;border:none;background-color:#FFFFFF">Saving...</span>
+                                                    </apex:outputPanel>
+                                                </div>
+                                                
+                                            </div> 
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </apex:repeat> 
+                    <!--
+<div class="slds-grid slds-wrap wrapper">
+
+<div class="slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+<apex:outputLabel style="font-size:1.25em;" id="deriveAccount" >Account Score : {!ROUND(derivedAccountScore, 2)} </apex:outputLabel>
+</div>
+
+<div class="slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+
+<apex:outputLabel >
+<button class="slds-button slds-button_brand buttonCal" onclick="methodForAccCalc();  return false;">Calculate Account Score</button>
+</apex:outputLabel>
+
+</div>
+<div class="slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3 slds-small-size_1-of-1 slds-col--padded slds-m-bottom_medium">
+<button class="slds-button slds-button_brand" onclick="methodForAccSave(); return false;">Save Account Score</button>
+</div>
+
+</div> -->
+                    
+                    
+                    <apex:actionFunction action="{!calculate}" name="methodForCalc" reRender="riskDirection,deriveCat,deriveField,deriveAccount,residualderiveField,accountScore,resDeriveCat" oncomplete="hideMessage()">
+                        <apex:param name="calcCatId" assignTo="{!catId}" value="" />
+                        <apex:param name="calcSubCatName" assignTo="{!subCatName}" value="" />
+                    </apex:actionFunction>
+                    
+                    
+                    <apex:actionFunction action="{!save}" name="methodForSave" reRender="riskDirection,deriveCat,deriveField,deriveAccount,residualderiveField,accountScore,resDeriveCat" oncomplete="hideMessage()">
+                        <apex:param name="calcCatId" assignTo="{!catId}" value="" />
+                        <apex:param name="calcSubCatName" assignTo="{!subCatName}" value="" />
+                    </apex:actionFunction>
+                    
+                    <apex:actionFunction action="{!calculate}" name="methodForCatCalcAF" reRender="riskDirection,deriveCat,deriveField,deriveAccount,residualderiveField,accountScore,resDeriveCat" oncomplete="hideMessage()">
+                        <apex:param name="calcCatScore" assignTo="{!catId}" value="" />
+                    </apex:actionFunction>
+                    
+                    <apex:actionFunction action="{!calculate}" name="methodForAccCalcAF" reRender="riskDirection,deriveCat,deriveField,deriveAccount,residualderiveField,accountScore,resDeriveCat" oncomplete="hideMessage()">
+                    </apex:actionFunction>
+                    
+                    <apex:actionFunction action="{!save}" name="methodForAccSaveAF" reRender="riskDirection,deriveCat,deriveField,deriveAccount,residualderiveField,accountScore,resDeriveCat" oncomplete="hideMessage()">
+                    </apex:actionFunction>
+                    
+                    <apex:actionFunction action="{!save}" name="methodForCatSaveAF" reRender="riskDirection,deriveCat,deriveField,deriveAccount,residualderiveField,accountScore,resDeriveCat" oncomplete="hideMessage()">
+                        <apex:param name="calcCatScore" assignTo="{!catId}" value="" />
+                    </apex:actionFunction>
+                    
+                   
+                    
+                </div>
+                
+                <script>
+                 var buttons = document.getElementsByClassName('buttonSub');
+                    var buttonIndex ;
+                 for (var i=0 ; i < buttons.length ; i++){
+                     (function(index){
+                           buttons[index].onclick = function(){
+                               //alert("I am buttonSub " + index);
+                               buttonIndex = index;
+                               if(true){
+                                   $('.modelPopupmainSubReg').show();
+                                   //var a =document.getElementById('pageContainer:listviewSubCatReg_refresh');
+                                   document.getElementById('pageContainer:listviewSubCatReg_refresh').click();
+                                   document.getElementById('pageContainer:listviewSubCatReg_refresh').click();
+                                   //$('.modelPopupmainSubReg').show();
+                                   return false;
+                               }
+                               return false;
+                          };
+                        })(i)
+                 }
+                 
+                
+                function showModel(){
+                    //document.getElementById(val).style.display="block";
+                    var a =document.getElementById('pageContainer:listviewCat_refresh');
+                    a.click();
+                    $('.modelPopupmain').show();
+                }
+                
+                function hideModel(){
+                    $('.modelPopupmain').hide();
+                }
+                
+                function showModelSub(){
+                    
+                }
+                
+                function hideModelSub(){
+                    $('.modelPopupmainSubReg').hide();
+                    $('.modelPopupmainSubOwn').hide();
+                    $('.modelPopupmainSubOper').hide();
+                    $('.modelPopupmainSubTran').hide();
+                    //$('.modelPopupmainSub').hide();
+                }
+                
+                function methodForAccCalc(ele) {
+                    ele.parentNode.querySelector('.messages').style.display = '';
+                    methodForAccCalcAF();
+                }
+                
+                function methodForAccSave(ele) {
+                    ele.parentNode.querySelector('.messages').style.display = '';
+                    methodForAccSaveAF();
+                }
+                
+                function methodCalulate(keyValue,subkeyValue, ele){
+                    ele.parentNode.querySelector('.message').style.display = '';
+                    methodForCalc(keyValue,subkeyValue);
+                }
+                
+                function methodForCatSave(keyValue,ele){
+                    ele.parentNode.querySelector('.message').style.display = '';
+                    methodForCatSaveAF(keyValue);
+                }
+                
+                function methodSave(keyValue,subkeyValue, ele){
+                    ele.parentNode.querySelector('.message').style.display = '';
+                    methodForSave(keyValue,subkeyValue);
+                    
+                }
+                
+                function methodForCatCalc(keyValue,ele) {
+                    ele.parentNode.querySelector('.message').style.display = '';
+                    methodForCatCalcAF(keyValue);
+                }
+                
+                function showDiv() {
+                    document.getElementById('welcomeDiv').style.display = "block";
+                    setTimeOut(function(){document.getElementById('welcomeDiv').style.display = "none";return false;},3000);
+                }
+                
+                function hideMessage() {
+                    let messages = document.querySelectorAll('.message');
+                    for(let i = 0; i < messages.length; i++) {
+                        messages[i].style.display = 'none';
+                    }
+                    
+                    let message = document.querySelectorAll('.messages');
+                    for(let i = 0; i < message.length; i++) {
+                        message[i].style.display = 'none';
+                    }
+                }
+                
+                
+                
+                </script>
+                
+                
+            </div>
+            
+        </div>
+        
+    </apex:form>
+    <script>
+    $(function() {
+        var tabs = $('.slds-tabs_default__nav .slds-tabs_default__item .slds-tabs_default__link');
+        $(tabs[0]).parent().siblings().removeClass('slds-is-active');
+        $(tabs[0]).parent().addClass('slds-is-active');
+        var tabItem = $(tabs[0]).data('target');
+        $('#'+tabItem).addClass('slds-show');
+        $('#'+tabItem).removeClass('slds-hide');
+        
+        $('.slds-tabs_default__nav .slds-tabs_default__item .slds-tabs_default__link').click(function(){
+            $(this).parent().siblings().removeClass('slds-is-active');
+            $(this).parent().addClass('slds-is-active');
+            
+            var y = $(this).data('target');
+            console.log(y);
+            $('.slds-tabs_default__content').siblings().removeClass('slds-show');
+            $('.slds-tabs_default__content').siblings().addClass('slds-hide');
+            $('#'+y).addClass('slds-show');
+            $('#'+y).removeClass('slds-hide');
+            console.log($('#'+y));
+        })
+        
+    })
+    </script>
+    
+    <div class="demo-only modelPopupmain" style="display:none;" >
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modelPopup" style="height:480px;width:80%;max-width:unset">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><b>Category History Record</b></h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <apex:outputPanel style="width:1500px">
+                        <apex:enhancedList id="listviewCat" type="Category_History__c" customizable="false" height="300" listId="00B1I000007ogt4" />
+                    </apex:outputPanel>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_brand okButton" onclick="hideModel();return false;">OK</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open backDrop"></div>
+    </div>
+    
+    <!----------------------------SUB CATEGORY HISTORY-------------------------->
+    <apex:outputPanel id="subCatHistory" layout="block">
+        
+     <div class="demo-only modelPopupmainSubReg" style="display:none;" >
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modelPopupSub" style="height:480px;width:80%;max-width:unset">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><b>Sub Category History Record</b></h2>
+                </header> 
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <apex:outputPanel style="width:1500px">
+                        <apex:enhancedList id="listviewSubCatReg" type="Sub_Category_History__c" customizable="false" height="300" listId="{!subCatHistoryListId}" />
+                    </apex:outputPanel>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_brand okButton" onclick="hideModelSub();return false;">OK</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open backDrop"></div>
+    </div>
+    </apex:outputPanel>
+    <!--
+     <div class="demo-only modelPopupmainSubOwn" style="display:none;" >
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modelPopupSub" style="height:480px;width:80%;max-width:unset">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><b>Sub Category History Record</b></h2>
+                </header> 
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <apex:outputPanel style="width:1500px">
+                        <apex:enhancedList id="listviewSubCatOwe" type="Sub_Category_History__c" customizable="false" height="300" listId="00B210000016D6v" />
+                    </apex:outputPanel>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_brand okButton" onclick="hideModelSub();return false;">OK</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open backDrop"></div>
+    </div>
+    
+     <div class="demo-only modelPopupmainSubOper" style="display:none;" >
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modelPopupSub" style="height:480px;width:80%;max-width:unset">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><b>Sub Category History Record</b></h2>
+                </header> 
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <apex:outputPanel style="width:1500px">
+                        <apex:enhancedList id="listviewSubCatOper" type="Sub_Category_History__c" customizable="false" height="300" listId="00B210000016D7A" />
+                    </apex:outputPanel>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_brand okButton" onclick="hideModelSub();return false;">OK</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open backDrop"></div>
+    </div>
+    
+     <div class="demo-only modelPopupmainSubTran" style="display:none;" >
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modelPopupSub" style="height:480px;width:80%;max-width:unset">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><b>Sub Category History Record</b></h2>
+                </header> 
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <apex:outputPanel style="width:1500px">
+                        <apex:enhancedList id="listviewSubCatTran" type="Sub_Category_History__c" customizable="false" height="300" listId="00B210000016D70" />
+                    </apex:outputPanel>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_brand okButton" onclick="hideModelSub();return false;">OK</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open backDrop"></div>
+    </div> -->
+    <!--
+     <div class="demo-only modelPopupmainSubRepo" style="display:none;" >
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modelPopupSub" style="height:480px;width:80%;max-width:unset">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><b>Sub Category History Record</b></h2>
+                </header> 
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <apex:outputPanel style="width:1500px">
+                        <apex:enhancedList id="listviewSubCatRepu" type="Sub_Category_History__c" customizable="false" height="300" listId="00B210000016D75" />
+                    </apex:outputPanel>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_brand okButton" onclick="hideModelSub();return false;">OK</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open backDrop"></div>
+    </div>
+     -->
+</apex:page>

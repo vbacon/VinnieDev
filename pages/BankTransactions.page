@@ -1,0 +1,178 @@
+<apex:page sidebar="false" standardController="BankAccount__c" extensions="AllBankAccountsTransactionsController" readOnly="true">
+    <html>
+        <head>
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/css/jquery.dataTables.min.css" />
+            <apex:slds />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js"></script>
+            <style>
+                #MyTable thead th:after{
+                    content: none;
+                }
+                /  styles for data table  /
+                .slds-scope .dataTables_length {
+                position: relative;
+                float: left;
+                margin-left: 1rem;
+                }
+                
+                .slds-scope .dataTables_length select {
+                background-color: #FFF;
+                color: #16325C;
+                border: 1px solid #D8DDE6 !important;
+                border-radius: 0.25rem;
+                transition: border 0.1s linear, background-color 0.1s linear;
+                height: 2.125rem;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                padding-left: 0.5rem;
+                padding-right: 1.5rem;
+                }
+                
+                .slds-scope .dataTables_filter {
+                float: right;
+                margin-bottom: 10px;
+                }
+                
+                .slds-scope .dataTables_filter input {
+                background-color: #FFF;
+                color: #16325C;
+                border: 1px solid #D8DDE6 !important;
+                border-radius: 0.25rem;
+                transition: border 0.1s linear, background-color 0.1s linear;
+                display: inline-block;
+                padding: 0 1rem 0 0.75rem;
+                line-height: 2.125rem;
+                min-height: calc(2.125rem + 2px);
+                margin-left: 0.5rem;
+                margin-right: 1rem;
+                width: 200px;
+                }
+                
+                .slds-scope .dataTables_info {
+                margin: 1rem;
+                float: left;
+                }
+                
+                .slds-scope .dataTables_paginate {
+                margin: 1rem;
+                float: right;
+                }
+                
+                .slds-scope .dataTables_paginate a {
+                background: #fff;
+                border: 1px solid #ddd !important;
+                padding: 0.5rem 0.75rem;
+                }
+                
+                .slds-scope .dataTables_paginate .paginate_button {
+                border-radius: none;
+                }
+                
+                .slds-scope .dataTables_paginate .paginate_button.current {
+                background: #0070d2;
+                color: #fff !important;
+                border-color: #0070d2 !important;
+                border-radius: 0;
+                }
+                
+                .slds-scope .dataTables_paginate .paginate_button.current:hover {
+                border-color: #ddd !important;
+                }
+                
+                .slds-scope .dataTables_paginate a:hover,
+                .slds-scope .dataTables_paginate a:active,
+                .slds-scope .dataTables_paginate a:focus {
+                text-decoration: none;
+                outline: 0;
+                }
+                .dataTables_wrapper .dataTables_paginate .paginate_button:hover, 
+                .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+                outline: none;
+                background-color: #036fd2;
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #036fd2), color-stop(100%, #036fd2));
+                background: -webkit-linear-gradient(top, #036fd2 0%, #036fd2 100%);
+                background: -moz-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);
+                background: -ms-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);
+                background: -o-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);
+                background: linear-gradient(to bottom, #036fd2 0%, #036fd2 100%);
+                box-shadow: inset 0 0 0px #036fd2;
+                }
+                .slds-scope .dataTables_paginate a:first-child {
+                border-radius: 4px 0 0 4px;
+                }
+                
+                .slds-scope .dataTables_paginate a:last-child {
+                border-radius: 0 4px 4px 0;
+                }
+                
+                .slds-scope .dataTables_paginate span>a {
+                border-radius: 0 !important;
+                }
+            </style>
+        </head>
+        <body style = "padding-top:5px;background: #fff !important;">
+            
+            <apex:form rendered="{!IF(OR($User.UITheme=='Theme4d',$User.UITheme=='Theme4u'),false,true)}">
+                <apex:commandButton action="{!cancel}" value="Go Back" styleClass="slds-button slds-button_brand" />
+            </apex:form>
+           <div  class="slds-scope">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-no-row-hover" id="MyTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Partner
+                            </th>
+                            <th>
+                                Credit
+                            </th>
+                            <th>
+                                Amount
+                            </th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!transactionList}" var="item">
+                            <tr class="slds-hint-parent">
+                                <td data-label="Date" scope="row">
+                                    <div class="slds-truncate" title="{!item.Transaction_Date__c}"><apex:outputText value="{0,date,yyyy'-'MM'-'dd}"><apex:param value="{!item.Transaction_Date__c}" /></apex:outputText></div>
+                                </td>
+                                <td data-label="Description">
+                                    <div class="slds-truncate" title="{!item.Remarks__c}">{!item.Remarks__c}</div>
+                                </td>
+                                <td data-label="Type">
+                                    <div class="slds-truncate" title="{!item.Transaction_Type__c}">{!item.Transaction_Type__c}</div>
+                                </td>
+                                <td data-label="Partner">
+                                    <div class="slds-truncate" title="{!item.To_Account_Name__c}">{!item.To_Account_Name__c}</div>
+                                </td>
+                               <td data-label="Type">
+                                    <div class="slds-truncate" title="{!item.CreditDebit__c}">{!item.CreditDebit__c}</div>
+                                </td>
+                                <td data-label="Amount">
+                                    <div class="slds-truncate" title="{!item.Amount__c}"><apex:outputText value="{0, number, currency}"><apex:param value="{!item.Amount__c}" /></apex:outputText></div>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $('#MyTable').DataTable();
+                });
+            </script> 
+        </body>
+    </html>
+</apex:page>

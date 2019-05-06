@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business Geocode Accuracy</value>
+        </caseValues>
+        <name>mailing_accuracy_geocode_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business Address</value>
+        </caseValues>
+        <name>mailing_address_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business  City</value>
+        </caseValues>
+        <name>mailing_city_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business  Country Code</value>
+        </caseValues>
+        <name>mailing_country_code_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business Country</value>
+        </caseValues>
+        <name>mailing_country_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business  Latitude</value>
+        </caseValues>
+        <name>mailing_latitude_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business  Longitude</value>
+        </caseValues>
+        <name>mailing_longitude_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business  State/Province Code</value>
+        </caseValues>
+        <name>mailing_state_code_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business  State/Province</value>
+        </caseValues>
+        <name>mailing_state_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business  Street</value>
+        </caseValues>
+        <name>mailing_street_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Business Zip/Postal Code</value>
+        </caseValues>
+        <name>mailing_zip_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Residential Address</value>
+        </caseValues>
+        <name>other_address_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Account Access --></label>
+        <name>Account_Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- List All --></help>
+        <label><!-- Alias --></label>
+        <name>Alias__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved_For_Sync --></label>
+        <name>Approved_For_Sync__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can Sign for Company --></label>
+        <name>Can_Sign_for_Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliance Approved --></label>
+        <name>Compliance_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContactExternal_ID --></label>
+        <name>ContactExternal_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Role --></label>
+        <name>Contact_Role__c</name>
+        <picklistValues>
+            <masterLabel>Contact person who is not above</masterLabel>
+            <translation><!-- Contact person who is not above --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Control Person</masterLabel>
+            <translation><!-- Control Person --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Authorized Signer</masterLabel>
+            <translation><!-- Other Authorized Signer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security Contact</masterLabel>
+            <translation><!-- Security Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UBO without control</masterLabel>
+            <translation><!-- UBO without control --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Control Person --></label>
+        <name>Control_Person__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country of Issuance --></label>
+        <name>Country_of_Issuance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date for TCPA Consent --></label>
+        <name>Date_for_TCPA_Consent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Verify Date --></label>
+        <name>Email_Verify_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Eye Color --></label>
+        <name>Eye_Color__c</name>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hair Color --></label>
+        <name>Hair_Color__c</name>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ID Expiration Date --></label>
+        <name>ID_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ID State --></label>
+        <name>ID_State__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC</masterLabel>
+            <translation><!-- Washington DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ID # --></label>
+        <name>ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Login --></label>
+        <name>Last_Login__c</name>
+    </fields>
+    <fields>
+        <label><!-- Login IP --></label>
+        <name>Login_IP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Most Recent Password OLD --></label>
+        <name>Most_Recent_Password_OLD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Most Recent Password --></label>
+        <name>Most_Recent_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Must Sign for Company --></label>
+        <name>Must_Sign_for_Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nested Owner --></label>
+        <name>Nested_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- OAC access --></label>
+        <name>OAC_access__c</name>
+        <picklistValues>
+            <masterLabel>Standard User</masterLabel>
+            <translation><!-- Standard User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opt in for SMS/2 Factor Auth. Date --></label>
+        <name>Opt_in_for_SMS_2_Factor_Auth_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opt in for SMS/2 Factor Auth --></label>
+        <name>Opt_in_for_SMS_2_Factor_Auth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ownership of Business --></label>
+        <name>Ownership_of_Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- Passport Number --></label>
+        <name>Passport_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone - Carrier --></label>
+        <name>Phone_Carrier__c</name>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Phone Verify Date --></label>
+        <name>Phone_Verify_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Place of Birth – City --></label>
+        <name>Place_of_Birth_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Place of Birth – State --></label>
+        <name>Place_of_Birth_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Place of Birth – Zip --></label>
+        <name>Place_of_Birth_Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Place of Birth --></label>
+        <name>Place_of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Email --></label>
+        <name>Primary_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Person --></label>
+        <name>Related_Person__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SSN --></label>
+        <name>SSN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Question --></label>
+        <name>Secondary_Question__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Access --></label>
+        <name>Security_Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sex – M/F --></label>
+        <name>Sex_M_F__c</name>
+        <picklistValues>
+            <masterLabel>F</masterLabel>
+            <translation><!-- F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M</masterLabel>
+            <translation><!-- M --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Signing authority --></label>
+        <name>Signing_authority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Social Security Number --></label>
+        <name>Social_Security_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- TCPA Consent --></label>
+        <name>TCPA_Consent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temporary Password --></label>
+        <name>Temporary_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Update_Required --></label>
+        <name>Update_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Username --></label>
+        <name>Username__c</name>
+    </fields>
+    <layouts>
+        <layout>Contact Layout</layout>
+        <sections>
+            <label><!-- Role and Approval --></label>
+            <section>Role and Approval</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contact Layout Partner Community</layout>
+        <sections>
+            <label><!-- Role and Approval --></label>
+            <section>Role and Approval</section>
+        </sections>
+    </layouts>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Email --></label>
+        <name>Send_Email</name>
+    </webLinks>
+</CustomObjectTranslation>

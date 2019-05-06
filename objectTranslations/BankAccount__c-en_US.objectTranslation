@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BankAccount</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BankAccount</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Nick Name --></label>
+        <name>Account_Nick_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- BankAccount --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved_For_Sync --></label>
+        <name>Approved_For_Sync__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance --></label>
+        <name>Balance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Account Id --></label>
+        <name>Bank_Account_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank account number --></label>
+        <name>Bank_account_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank routing number --></label>
+        <name>Bank_routing_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dama Account --></label>
+        <name>Dama_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExternalId --></label>
+        <name>ExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- OAC Wallet ID --></label>
+        <name>OAC_Wallet_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary --></label>
+        <name>Primary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processor Product --></label>
+        <name>Program_Product__c</name>
+        <relationshipLabel><!-- BankAccount --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Relationship --></label>
+        <name>Relationship_object__c</name>
+        <relationshipLabel><!-- BankAccount --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Update_Required --></label>
+        <name>Update_Required__c</name>
+    </fields>
+    <layouts>
+        <layout>BankAccount Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

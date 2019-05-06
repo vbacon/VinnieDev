@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>KYC Logs</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>KYC Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- KYC Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- KYC Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Time Initiated --></label>
+        <name>Date_Time_Initiated__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExternalId --></label>
+        <name>ExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- KYC Callout results --></label>
+        <name>KYC_Callout_results__c</name>
+        <relationshipLabel><!-- KYC Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requestor --></label>
+        <name>Requestor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed Successfully</masterLabel>
+            <translation><!-- Completed Successfully --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

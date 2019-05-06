@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Application Declined Reason --></label>
+        <name>Application_Declined_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Budget Confirmed --></label>
+        <name>Budget_Confirmed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliance Officer --></label>
+        <name>Compliance_Officer__c</name>
+        <relationshipLabel><!-- Due Diligence (Compliance Officer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Count of Risk Dimesion --></label>
+        <name>Count_of_Risk_Dimesion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Status Date --></label>
+        <name>Current_Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Declined Notes --></label>
+        <name>Declined_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discovery Completed --></label>
+        <name>Discovery_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Escalation Manager --></label>
+        <name>Escalation_Manager__c</name>
+        <relationshipLabel><!-- Due Diligence (Escalation Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Loss Reason --></label>
+        <name>Loss_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Lost to Competitor</masterLabel>
+            <translation><!-- Lost to Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Budget / Lost Funding</masterLabel>
+            <translation><!-- No Budget / Lost Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Decision / Non-Responsive</masterLabel>
+            <translation><!-- No Decision / Non-Responsive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- OpportunityExternalID --></label>
+        <name>OpportunityExternalID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overall Risk Percentage --></label>
+        <name>Overall_Risk_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Status Date --></label>
+        <name>Previous_Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <picklistValues>
+            <masterLabel>Basic Account</masterLabel>
+            <translation><!-- Basic Account --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ROI Analysis Completed --></label>
+        <name>ROI_Analysis_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Substate --></label>
+        <name>Substate__c</name>
+        <picklistValues>
+            <masterLabel>Escalated to Compliance</masterLabel>
+            <translation><!-- Escalated to Compliance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escalated to Manager</masterLabel>
+            <translation><!-- Escalated to Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress by KYC Analyst</masterLabel>
+            <translation><!-- In Progress by KYC Analyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request Information from Client</masterLabel>
+            <translation><!-- Request Information from Client --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Risk Score --></label>
+        <name>Total_Risk_Score__c</name>
+    </fields>
+    <layouts>
+        <layout>Project Layout</layout>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Escalate to Case --></label>
+        <name>Escalate_Action</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Project --></label>
+        <name>Project</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- &quot;Declined Notes&quot; is required to save this record --></errorMessage>
+        <name>Application_Declined_Notes_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot create more than 9 risk dimensions for an opportunity --></errorMessage>
+        <name>Count_of_Risk_Dimension_cannot_exceed_9</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please contact your system administrator to adjust the stage to this value. --></errorMessage>
+        <name>Opportunity_Progression</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Overall Risk Percentage can&apos;t be greater than 100% --></errorMessage>
+        <name>Overall_Risk_Percentage_less_than_100</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Count of Risk Dimension must be equal to 9 to be able to close this opportunity as won --></errorMessage>
+        <name>Risk_Dimension_equals_9_to_Close_Oppt</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Overall Risk Percentage must be equals to 100% to be able to close this opportunity as won --></errorMessage>
+        <name>Risk_Percentage_equals_100_to_Close_Opp</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Account_Initiation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Application_Approved</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Credit_Checks</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Financial_Checks</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Initial_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Legal_Checks</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Location_Checks</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Manager_Review</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Onsite_Interview</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Phone_Interview</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Product_Checks</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Regulatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Related_Parties</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Score_Calculation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_Tax_Checks</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot go back to previous stage for this opportunity. Only System Administrators have the ability to reset the stage as needed --></errorMessage>
+        <name>Stage_Progression_UBO</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Escalate_to_Compliance_Officer --></label>
+        <name>Escalate_to_Compliance_Officer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Escalate_to_Manager --></label>
+        <name>Escalate_to_Manager</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Request_External_Documentation --></label>
+        <name>Request_External_Documentation</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Request_Information_from_Client --></label>
+        <name>Request_Information_from_Client</name>
+    </webLinks>
+</CustomObjectTranslation>

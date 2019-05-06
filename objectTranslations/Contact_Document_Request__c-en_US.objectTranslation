@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contact Document Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contact Document Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Contact Document Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The document that was uploaded to attachments.  Use this to verify that the filename exists in attachments. --></help>
+        <label><!-- Document Name Uploaded --></label>
+        <name>Document_Name_Uploaded__c</name>
+    </fields>
+    <fields>
+        <help><!-- The document type requested --></help>
+        <label><!-- Document Type --></label>
+        <name>Document_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the document has been provided via other means (email, text etc), please check this field to disable the request in external applications. --></help>
+        <label><!-- Upload Complete --></label>
+        <name>Upload_Complete__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer Document</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Documents</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Customer Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Admin Notes --></label>
+        <name>Admin_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliance Approved --></label>
+        <name>Compliance_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Customer Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Document Grouping --></label>
+        <name>Document_Grouping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Type --></label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>ATM Service Agreement</masterLabel>
+            <translation><!-- ATM Service Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual Report</masterLabel>
+            <translation><!-- Annual Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application PDF</masterLabel>
+            <translation><!-- Application PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Articles of Incorporation</masterLabel>
+            <translation><!-- Articles of Incorporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Articles of Organization</masterLabel>
+            <translation><!-- Articles of Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Balance Sheet</masterLabel>
+            <translation><!-- Balance Sheet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Check</masterLabel>
+            <translation><!-- Business Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cashflow Statement</masterLabel>
+            <translation><!-- Cashflow Statement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>City License</masterLabel>
+            <translation><!-- City License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Profile</masterLabel>
+            <translation><!-- Company Profile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Officers</masterLabel>
+            <translation><!-- Corporate Officers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Resolution</masterLabel>
+            <translation><!-- Corporate Resolution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>County License</masterLabel>
+            <translation><!-- County License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cultivation Tax Receipts</masterLabel>
+            <translation><!-- Cultivation Tax Receipts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBA Certificate</masterLabel>
+            <translation><!-- DBA Certificate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EIN Verification</masterLabel>
+            <translation><!-- EIN Verification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excise Tax Receipts</masterLabel>
+            <translation><!-- Excise Tax Receipts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal Tax Return</masterLabel>
+            <translation><!-- Federal Tax Return --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Forecast</masterLabel>
+            <translation><!-- Financial Forecast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Income Statement</masterLabel>
+            <translation><!-- Income Statement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance Policy</masterLabel>
+            <translation><!-- Insurance Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Joint Venture Agreement</masterLabel>
+            <translation><!-- Joint Venture Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Key Personnel</masterLabel>
+            <translation><!-- Key Personnel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lease Agreement</masterLabel>
+            <translation><!-- Lease Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Tax Receipts</masterLabel>
+            <translation><!-- Local Tax Receipts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscellaneous</masterLabel>
+            <translation><!-- Miscellaneous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-site Checklist</masterLabel>
+            <translation><!-- On-site Checklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-site Inspector Report</masterLabel>
+            <translation><!-- On-site Inspector Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ownership Structure</masterLabel>
+            <translation><!-- Ownership Structure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P&amp;L Statement</masterLabel>
+            <translation><!-- P&amp;L Statement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Deed</masterLabel>
+            <translation><!-- Property Deed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Diagram</masterLabel>
+            <translation><!-- Property Diagram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk and Security Policy</masterLabel>
+            <translation><!-- Risk and Security Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales and Use Tax Receipts</masterLabel>
+            <translation><!-- Sales and Use Tax Receipts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State License</masterLabel>
+            <translation><!-- State License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Tax Return</masterLabel>
+            <translation><!-- State Tax Return --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surety Bond</masterLabel>
+            <translation><!-- Surety Bond --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Document Unavailable Reason --></label>
+        <name>Document_Unavailable_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document expiration date --></label>
+        <name>Document_expiration_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Required --></label>
+        <name>Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Review needed --></label>
+        <name>Review_needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verified --></label>
+        <name>Verified__c</name>
+    </fields>
+    <fields>
+        <label><!-- externalId --></label>
+        <name>externalId__c</name>
+    </fields>
+    <layouts>
+        <layout>Customer Document - Partner Community</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Customer Document Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Delete --></label>
+        <name>Delete</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

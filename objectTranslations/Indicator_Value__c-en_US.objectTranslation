@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Indicator Value</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Indicator Values</value>
+    </caseValues>
+    <fields>
+        <label><!-- Model Indicator Definition --></label>
+        <name>Model_Indicator_Definition__c</name>
+        <relationshipLabel><!-- Indicator Values --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Note --></label>
+        <name>Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Residual Indicator Value --></label>
+        <name>Residual_Indicator_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Score__c</name>
+        <relationshipLabel><!-- Indicator Values --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,13 @@
+<apex:page controller="MasterScoreCalculator" action="{!doStart}">
+    
+    <apex:outputPanel layout="block" rendered="{!!isMaster}">
+    	<h2 style = "font-size:2rem; font-color:red; margin-left:30px; margin-top:50px;">
+            Account is not Master
+        </h2>
+    </apex:outputPanel>
+    <apex:outputPanel layout="block" rendered="{!isMaster}">
+    	<h2 style = "font-size:1.5rem; margin-left:30px; margin-top:50px;">
+            <label>Calculating....</label>
+        </h2>
+    </apex:outputPanel>
+</apex:page>

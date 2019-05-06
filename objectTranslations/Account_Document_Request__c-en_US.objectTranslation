@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Document Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Document Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account Document Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The name of the document as uploaded, to enable matching with Attachments. --></help>
+        <label><!-- Document Name Uploaded --></label>
+        <name>Document_Name_Uploaded__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of document request. --></help>
+        <label><!-- Document Type --></label>
+        <name>Document_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set if the user has already uploaded the document.  Set by had if the customer has provided the document via another means. --></help>
+        <label><!-- Upload Complete --></label>
+        <name>Upload_Complete__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

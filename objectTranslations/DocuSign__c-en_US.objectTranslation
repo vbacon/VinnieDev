@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DocuSign</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DocuSign</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccountID --></label>
+        <name>AccountID__c</name>
+    </fields>
+    <fields>
+        <label><!-- AuthorizedUserTempalteId --></label>
+        <name>AuthorizedUserTempalteId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ControlPersonTemplateId --></label>
+        <name>ControlPersonTemplateId__c</name>
+    </fields>
+    <fields>
+        <label><!-- EndPoint --></label>
+        <name>EndPoint__c</name>
+    </fields>
+    <fields>
+        <label><!-- IntegratorKey --></label>
+        <name>IntegratorKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- PassWord --></label>
+        <name>PassWord__c</name>
+    </fields>
+    <fields>
+        <label><!-- UBO Nested Template Id --></label>
+        <name>UBO_Nested_Template_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- UBO Template Id --></label>
+        <name>UBO_Template_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- UserName --></label>
+        <name>UserName__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

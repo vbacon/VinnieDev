@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Processor Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Processor Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Product_ID --></label>
+        <name>Product_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <relationshipLabel><!-- Processor Products --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <content>DeleteCustomerDocument</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Customer_Document_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Customer Documents</relationshipLabel>
+        <relationshipName>Customer_Documents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Admin_Notes__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Admin Notes</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Compliance_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Compliance Approved</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Documents</relationshipLabel>
+        <relationshipName>Customer_Documents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Document_Grouping__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Document Grouping</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Document_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Type</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Annual Report</fullName>
+                    <default>false</default>
+                    <label>Annual Report</label>
+                </value>
+                <value>
+                    <fullName>Application PDF</fullName>
+                    <default>false</default>
+                    <label>Application PDF</label>
+                </value>
+                <value>
+                    <fullName>Articles of Incorporation</fullName>
+                    <default>false</default>
+                    <label>Articles of Incorporation</label>
+                </value>
+                <value>
+                    <fullName>Articles of Organization</fullName>
+                    <default>false</default>
+                    <label>Articles of Organization</label>
+                </value>
+                <value>
+                    <fullName>ATM Service Agreement</fullName>
+                    <default>false</default>
+                    <label>ATM Service Agreement</label>
+                </value>
+                <value>
+                    <fullName>Balance Sheet</fullName>
+                    <default>false</default>
+                    <label>Balance Sheet</label>
+                </value>
+                <value>
+                    <fullName>Business Check</fullName>
+                    <default>false</default>
+                    <label>Business Check</label>
+                </value>
+                <value>
+                    <fullName>Cashflow Statement</fullName>
+                    <default>false</default>
+                    <label>Cashflow Statement</label>
+                </value>
+                <value>
+                    <fullName>City License</fullName>
+                    <default>false</default>
+                    <label>City License</label>
+                </value>
+                <value>
+                    <fullName>Company Profile</fullName>
+                    <default>false</default>
+                    <label>Company Profile</label>
+                </value>
+                <value>
+                    <fullName>Corporate Officers</fullName>
+                    <default>false</default>
+                    <label>Corporate Officers</label>
+                </value>
+                <value>
+                    <fullName>Corporate Resolution</fullName>
+                    <default>false</default>
+                    <label>Corporate Resolution</label>
+                </value>
+                <value>
+                    <fullName>County License</fullName>
+                    <default>false</default>
+                    <label>County License</label>
+                </value>
+                <value>
+                    <fullName>Cultivation Tax Receipts</fullName>
+                    <default>false</default>
+                    <label>Cultivation Tax Receipts</label>
+                </value>
+                <value>
+                    <fullName>DBA Certificate</fullName>
+                    <default>false</default>
+                    <label>DBA Certificate</label>
+                </value>
+                <value>
+                    <fullName>EIN Verification</fullName>
+                    <default>false</default>
+                    <label>EIN Verification</label>
+                </value>
+                <value>
+                    <fullName>Excise Tax Receipts</fullName>
+                    <default>false</default>
+                    <label>Excise Tax Receipts</label>
+                </value>
+                <value>
+                    <fullName>Federal Tax Return</fullName>
+                    <default>false</default>
+                    <label>Federal Tax Return</label>
+                </value>
+                <value>
+                    <fullName>Financial Forecast</fullName>
+                    <default>false</default>
+                    <label>Financial Forecast</label>
+                </value>
+                <value>
+                    <fullName>Income Statement</fullName>
+                    <default>false</default>
+                    <label>Income Statement</label>
+                </value>
+                <value>
+                    <fullName>Insurance Policy</fullName>
+                    <default>false</default>
+                    <label>Insurance Policy</label>
+                </value>
+                <value>
+                    <fullName>Joint Venture Agreement</fullName>
+                    <default>false</default>
+                    <label>Joint Venture Agreement</label>
+                </value>
+                <value>
+                    <fullName>Key Personnel</fullName>
+                    <default>false</default>
+                    <label>Key Personnel</label>
+                </value>
+                <value>
+                    <fullName>Lease Agreement</fullName>
+                    <default>false</default>
+                    <label>Lease Agreement</label>
+                </value>
+                <value>
+                    <fullName>Local Tax Receipts</fullName>
+                    <default>false</default>
+                    <label>Local Tax Receipts</label>
+                </value>
+                <value>
+                    <fullName>Miscellaneous</fullName>
+                    <default>false</default>
+                    <label>Miscellaneous</label>
+                </value>
+                <value>
+                    <fullName>On-site Checklist</fullName>
+                    <default>false</default>
+                    <label>On-site Checklist</label>
+                </value>
+                <value>
+                    <fullName>On-site Inspector Report</fullName>
+                    <default>false</default>
+                    <label>On-site Inspector Report</label>
+                </value>
+                <value>
+                    <fullName>Ownership Structure</fullName>
+                    <default>false</default>
+                    <label>Ownership Structure</label>
+                </value>
+                <value>
+                    <fullName>P&amp;L Statement</fullName>
+                    <default>false</default>
+                    <label>P&amp;L Statement</label>
+                </value>
+                <value>
+                    <fullName>Property Deed</fullName>
+                    <default>false</default>
+                    <label>Property Deed</label>
+                </value>
+                <value>
+                    <fullName>Property Diagram</fullName>
+                    <default>false</default>
+                    <label>Property Diagram</label>
+                </value>
+                <value>
+                    <fullName>Risk and Security Policy</fullName>
+                    <default>false</default>
+                    <label>Risk and Security Policy</label>
+                </value>
+                <value>
+                    <fullName>Sales and Use Tax Receipts</fullName>
+                    <default>false</default>
+                    <label>Sales and Use Tax Receipts</label>
+                </value>
+                <value>
+                    <fullName>State License</fullName>
+                    <default>false</default>
+                    <label>State License</label>
+                </value>
+                <value>
+                    <fullName>State Tax Return</fullName>
+                    <default>false</default>
+                    <label>State Tax Return</label>
+                </value>
+                <value>
+                    <fullName>Surety Bond</fullName>
+                    <default>false</default>
+                    <label>Surety Bond</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Document_Unavailable_Reason__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Document Unavailable Reason</label>
+        <length>10000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Document_expiration_date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Document expiration date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Required</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Review_needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Review needed</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Verified__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Verified</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>externalId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <label>externalId</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Customer Document</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Document Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Customer Documents</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

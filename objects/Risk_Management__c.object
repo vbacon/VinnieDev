@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Opportunity__r.StageName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Risks Management</relationshipLabel>
+        <relationshipName>Risks_Management</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Risk_Dimension__c</fullName>
+        <externalId>false</externalId>
+        <label>Risk Dimension</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Regulatory</fullName>
+                    <default>false</default>
+                    <label>Regulatory</label>
+                </value>
+                <value>
+                    <fullName>Ultimate Beneficial Ownership</fullName>
+                    <default>false</default>
+                    <label>Ultimate Beneficial Ownership</label>
+                </value>
+                <value>
+                    <fullName>Related Parties</fullName>
+                    <default>false</default>
+                    <label>Related Parties</label>
+                </value>
+                <value>
+                    <fullName>Financial Details</fullName>
+                    <default>false</default>
+                    <label>Financial Details</label>
+                </value>
+                <value>
+                    <fullName>Tax Details</fullName>
+                    <default>false</default>
+                    <label>Tax Details</label>
+                </value>
+                <value>
+                    <fullName>Credit Details</fullName>
+                    <default>false</default>
+                    <label>Credit Details</label>
+                </value>
+                <value>
+                    <fullName>Legal Details</fullName>
+                    <default>false</default>
+                    <label>Legal Details</label>
+                </value>
+                <value>
+                    <fullName>Product Details</fullName>
+                    <default>false</default>
+                    <label>Product Details</label>
+                </value>
+                <value>
+                    <fullName>Location Details</fullName>
+                    <default>false</default>
+                    <label>Location Details</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Level__c,&quot;LOW&quot;),(10* Weight_Hidden__c),
+IF(ISPICKVAL(Level__c,&quot;Medium&quot;),(20* Weight_Hidden__c),
+IF(ISPICKVAL(Level__c,&quot;High&quot;),(30* Weight_Hidden__c),
+NULL)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Weight_Hidden__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case(TEXT(Weight__c),
+&quot;5%&quot;,0.05,
+&quot;10%&quot;,0.10,
+&quot;15%&quot;,0.15,
+&quot;20%&quot;,0.20,
+&quot;25%&quot;,0.25,
+&quot;30%&quot;,0.30,
+&quot;35%&quot;,0.35,
+&quot;40%&quot;,0.40,
+NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Weight Hidden</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Weight__c</fullName>
+        <externalId>false</externalId>
+        <label>Weight</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5%</fullName>
+                    <default>false</default>
+                    <label>5%</label>
+                </value>
+                <value>
+                    <fullName>10%</fullName>
+                    <default>false</default>
+                    <label>10%</label>
+                </value>
+                <value>
+                    <fullName>15%</fullName>
+                    <default>false</default>
+                    <label>15%</label>
+                </value>
+                <value>
+                    <fullName>20%</fullName>
+                    <default>false</default>
+                    <label>20%</label>
+                </value>
+                <value>
+                    <fullName>25%</fullName>
+                    <default>false</default>
+                    <label>25%</label>
+                </value>
+                <value>
+                    <fullName>30%</fullName>
+                    <default>false</default>
+                    <label>30%</label>
+                </value>
+                <value>
+                    <fullName>35%</fullName>
+                    <default>false</default>
+                    <label>35%</label>
+                </value>
+                <value>
+                    <fullName>40%</fullName>
+                    <default>false</default>
+                    <label>40%</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Risk Management</label>
+    <nameField>
+        <displayFormat>RM-{0000}</displayFormat>
+        <label>Risk Management Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Risks Management</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Account_Initiation_doesnt_apply_RiskDim</fullName>
+        <active>true</active>
+        <description>This rule will trigger to prevent users from when creating a risk dimension that does not have a stage associated with it</description>
+        <errorConditionFormula>AND( Opportunity_Stage__c = &quot;Account Initiation&quot;,
+NOT(ISBLANK(TEXT( Risk_Dimension__c))))</errorConditionFormula>
+        <errorMessage>You can&apos;t create a risk dimension in this stage of the opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Application_in_progress_not_RiskDim</fullName>
+        <active>true</active>
+        <description>This rule will trigger to prevent users from when creating a risk dimension that does not have a stage associated with it</description>
+        <errorConditionFormula>AND( Opportunity_Stage__c = &quot;Application in progress&quot;,
+NOT(ISBLANK(TEXT( Risk_Dimension__c))))</errorConditionFormula>
+        <errorMessage>You can&apos;t create a risk dimension in this stage of the opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Initial_Validation_doesnt_apply_RiskDim</fullName>
+        <active>true</active>
+        <description>This rule will trigger to prevent users from when creating a risk dimension that does not have a stage associated with it</description>
+        <errorConditionFormula>AND( Opportunity_Stage__c = &quot;Initial Validation&quot;,
+NOT(ISBLANK(TEXT( Risk_Dimension__c))))</errorConditionFormula>
+        <errorMessage>You can&apos;t create a risk dimension in this stage of the opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Manager_Review_doesnt_apply_RiskDim</fullName>
+        <active>true</active>
+        <description>This rule will trigger to prevent users from when creating a risk dimension that does not have a stage associated with it</description>
+        <errorConditionFormula>AND( Opportunity_Stage__c = &quot;Manager Review&quot;,
+NOT(ISBLANK(TEXT( Risk_Dimension__c))))</errorConditionFormula>
+        <errorMessage>You can&apos;t create a risk dimension in this stage of the opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Onsite_Interview_doesnt_apply_RiskDim</fullName>
+        <active>true</active>
+        <description>This rule will trigger to prevent users from when creating a risk dimension that does not have a stage associated with it</description>
+        <errorConditionFormula>AND( Opportunity_Stage__c = &quot;Onsite Interview&quot;,
+NOT(ISBLANK(TEXT( Risk_Dimension__c))))</errorConditionFormula>
+        <errorMessage>You can&apos;t create a risk dimension in this stage of the opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_Interview_doesnt_apply_RiskDim</fullName>
+        <active>true</active>
+        <description>This rule will trigger to prevent users from when creating a risk dimension that does not have a stage associated with it</description>
+        <errorConditionFormula>AND( Opportunity_Stage__c = &quot;Phone Interview&quot;,
+NOT(ISBLANK(TEXT( Risk_Dimension__c))))</errorConditionFormula>
+        <errorMessage>You can&apos;t create a risk dimension in this stage of the opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rejected_doesnt_apply_RiskDim</fullName>
+        <active>true</active>
+        <description>This rule will trigger to prevent users from when creating a risk dimension that does not have a stage associated with it</description>
+        <errorConditionFormula>AND( Opportunity_Stage__c = &quot;Rejected&quot;,
+NOT(ISBLANK(TEXT( Risk_Dimension__c))))</errorConditionFormula>
+        <errorMessage>You can&apos;t create a risk dimension in this stage of the opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Risk_Dimension_Equals_Credit_Details</fullName>
+        <active>true</active>
+        <description>This rule validates the opportunity stage in order to match the risk dimension</description>
+        <errorConditionFormula>AND(Opportunity_Stage__c = &quot;Credit check (S)&quot;, 
+NOT(ISPICKVAL( Risk_Dimension__c,&quot;Credit Details&quot;) 
+))</errorConditionFormula>
+        <errorMessage>Risk Dimension must match the Opportunity Stage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Risk_Dimension_Equals_Financial_Details</fullName>
+        <active>true</active>
+        <description>This rule validates the opportunity stage in order to match the risk dimension</description>
+        <errorConditionFormula>AND(Opportunity_Stage__c = &quot;Financial check (S)&quot;, 
+NOT(ISPICKVAL( Risk_Dimension__c,&quot;Financial Details&quot;) 
+))</errorConditionFormula>
+        <errorMessage>Risk Dimension must match the Opportunity Stage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Risk_Dimension_Equals_Legal_Details</fullName>
+        <active>true</active>
+        <description>This rule validates the opportunity stage in order to match the risk dimension</description>
+        <errorConditionFormula>AND(Opportunity_Stage__c = &quot;Legal check (S)&quot;, 
+NOT(ISPICKVAL( Risk_Dimension__c,&quot;Legal Details&quot;) 
+))</errorConditionFormula>
+        <errorMessage>Risk Dimension must match the Opportunity Stage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Risk_Dimension_Equals_Location_Details</fullName>
+        <active>true</active>
+        <description>This rule validates the opportunity stage in order to match the risk dimension</description>
+        <errorConditionFormula>AND(Opportunity_Stage__c = &quot;Location check (S)&quot;, 
+NOT(ISPICKVAL( Risk_Dimension__c,&quot;Location Details&quot;) 
+))</errorConditionFormula>
+        <errorMessage>Risk Dimension must match the Opportunity Stage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Risk_Dimension_Equals_Product_Details</fullName>
+        <active>true</active>
+        <description>This rule validates the opportunity stage in order to match the risk dimension</description>
+        <errorConditionFormula>AND(Opportunity_Stage__c = &quot;Product check (S)&quot;, 
+NOT(ISPICKVAL( Risk_Dimension__c,&quot;Product Details&quot;) 
+))</errorConditionFormula>
+        <errorMessage>Risk Dimension must match the Opportunity Stage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Risk_Dimension_Equals_Related_Parties</fullName>
+        <active>true</active>
+        <description>This rule validates the opportunity stage in order to match the risk dimension</description>
+        <errorConditionFormula>AND(Opportunity_Stage__c = &quot;Related Parties (S)&quot;, 
+NOT(ISPICKVAL( Risk_Dimension__c,&quot;Related Parties&quot;) 
+))</errorConditionFormula>
+        <errorMessage>Risk Dimension must match the Opportunity Stage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Risk_Dimension_Equals_Tax_Details</fullName>
+        <active>true</active>
+        <description>This rule validates the opportunity stage in order to match the risk dimension</description>
+        <errorConditionFormula>AND(Opportunity_Stage__c = &quot;Tax check (S)&quot;, 
+NOT(ISPICKVAL( Risk_Dimension__c,&quot;Tax Details&quot;) 
+))</errorConditionFormula>
+        <errorMessage>Risk Dimension must match the Opportunity Stage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Risk_Dimension_Equals_UBO</fullName>
+        <active>true</active>
+        <description>This rule validates the opportunity stage in order to match the risk dimension</description>
+        <errorConditionFormula>AND(Opportunity_Stage__c = &quot;UBO/signer/officials check (S)&quot;, 
+NOT(ISPICKVAL( Risk_Dimension__c,&quot;Ultimate Beneficial Ownership&quot;) 
+))</errorConditionFormula>
+        <errorMessage>Risk Dimension must match the Opportunity Stage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Risk_Dimension_equals_Regulatory</fullName>
+        <active>true</active>
+        <description>This rule validates the opportunity stage in order to match the risk dimension</description>
+        <errorConditionFormula>AND(Opportunity_Stage__c = &quot;Regulatory&quot;,
+NOT(ISPICKVAL( Risk_Dimension__c,&quot;Regulatory&quot;) 
+))</errorConditionFormula>
+        <errorMessage>Risk Dimension must match the Opportunity Stage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Score_Calculation_doesnt_apply_RiskDim</fullName>
+        <active>true</active>
+        <description>This rule will trigger to prevent users from when creating a risk dimension that does not have a stage associated with it</description>
+        <errorConditionFormula>AND( Opportunity_Stage__c = &quot;Score Calculation&quot;,
+NOT(ISBLANK(TEXT( Risk_Dimension__c))))</errorConditionFormula>
+        <errorMessage>You can&apos;t create a risk dimension in this stage of the opportunity</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

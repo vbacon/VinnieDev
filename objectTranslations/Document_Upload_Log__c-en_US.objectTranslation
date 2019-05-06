@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Document Upload Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Document Upload Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Bucket Filename --></label>
+        <name>Bucket_Filename__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bucket --></label>
+        <name>Bucket__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client IP Address --></label>
+        <name>Client_IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Document --></label>
+        <name>Customer_Document__c</name>
+        <relationshipLabel><!-- Document Upload Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- File Size --></label>
+        <name>File_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mime Type --></label>
+        <name>Mime_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Generated Filename --></label>
+        <name>Salesforce_Generated_Filename__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upload Time --></label>
+        <name>Upload_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- externalId --></label>
+        <name>externalId__c</name>
+    </fields>
+    <layouts>
+        <layout>Document Upload Log Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,9 @@
+<apex:page Controller="ShowPdfOnTabController" standardStylesheets="true" showHeader="false" action="{!ShowFinancialPDF}"> 
+   <embed src="/_swf/190003/sfc/flex/DocViewer.swf" 
+          flashvars="shepherd_prefix=/sfc/servlet.shepherd&v={!contentVersionId}&mode=chatter_bubble&in_tests=false" 
+          width="800px" height="750px" align="left" id="renditionLarge" 
+          quality="high" bgcolor="#f3f3f3" name="renditionLarge" 
+          allowscriptaccess="always" allowfullscreen="true" 
+          pluginspage="http://www.adobe.com/go/getflashplayer" 
+          wmode="opaque" type="application/x-shockwave-flash"/>
+</apex:page>

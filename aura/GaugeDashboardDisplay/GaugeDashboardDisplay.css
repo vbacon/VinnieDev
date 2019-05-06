@@ -1,0 +1,19 @@
+.THIS.canvasCont{
+    display:flex;
+    justify-content: center;
+}
+.THIS.canvasCont canvas{display:inline-block;     margin-top: 10px;}
+.THIS .canvesText{position:relative;padding:20px;}
+
+.THIS .canvesText span:first-child{position: absolute; top: 0; left: 0; right: 0; width: 100%; text-align: center;margin:10px 0px;font-size: 15px;font-weight:bold;}
+.THIS .canvesText span:nth-child(2){position: absolute; top: 0; left: 0; right: 0; width: 100%; text-align: center; margin: 10px 0; margin-top: 100px; font-size: 25px;}
+.THIS .canvesText span:last-child{position: absolute; bottom: 0; left: 0; right: 0; width: 100%; text-align: center; margin: 10px 0; margin-bottom:52px; font-size: 30px;}
+
+.THIS .canvesTextLg{position:relative;padding:20px;}
+.THIS .canvesTextLg span:first-child{position: absolute; top: 0; left: 0; right: 0; width: 100%; text-align: center;margin:10px 0px;font-size: 15px;font-weight:bold;}
+.THIS .canvesTextLg span:nth-child(2){position: absolute; top: 0; left: 0; right: 0; width: 100%; text-align: center; margin: 10px 0; margin-top: 120px; font-size: 25px;}
+.THIS .canvesTextLg span:last-child{position: absolute; top: 50%; left: 0; right: 0; width: 100%; text-align: center; margin: 10px 0; margin-bottom: 80px; font-size: 25px;}
+
+
+
+.THIS .canvesText span:last-child { position: absolute; top: 60%; left: 0; right: 0; width: 100%; text-align: center; margin: 0; margin-bottom: 0; font-size: 25px; }

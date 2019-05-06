@@ -1,0 +1,81 @@
+<apex:page StandardController="Customer_Document__c" extensions="DeleteCustomerDocumentController" showHeader="true">
+    <apex:slds />
+    <head>
+    	<style>
+            .padtop {
+            	padding-top: 8px;
+            }
+            .padbottom {
+            	padding-bottom: 8px;
+            }
+            .centerme {
+            	text-align: center;
+            }
+    	</style>
+    	<script> 
+    	</script>
+    </head>
+
+	<apex:pageBlock rendered="{!!documentDeleteAttempted}">
+    	<div class="padtop slds-text-heading_small">This will delete this Customer Document and all of its associated files!</div>
+		
+		<div class="padtop padbottom"><strong>Account: </strong><apex:outputText value="{!accountName}" /></div>
+				
+		<div class="padbottom"><strong>Customer Document: </strong><apex:outputText value="{!theCustomerDocument.Name}" /></div>
+		
+        <div class="padbottom"><strong>Associated Files:</strong></div>
+		
+        <div class="padbottom">
+	        <apex:dataTable value="{!theContentDocuments}" var="doc">
+	        	<apex:column >
+	            	&nbsp;&nbsp;<strong>Name:</strong>&nbsp;
+	            	<apex:outputText value="{!doc.Title}.{!doc.FileExtension}" />
+	            </apex:column>
+	            <apex:column >
+	            	&nbsp;&nbsp;<strong>Date:</strong>&nbsp;
+	            	<apex:outputText value="{0,date,MM/dd/yy}"><apex:param value="{!doc.contentModifiedDate}" /></apex:outputText>
+	            </apex:column>
+	            <apex:column >
+	            	&nbsp;&nbsp;<strong>Size:</strong>&nbsp;
+	            	<apex:outputText value="{!doc.contentSize}" /> bytes
+	            </apex:column>
+		    </apex:dataTable>		
+		</div>
+		
+        <apex:form >
+        	<div class="padtop centerme">
+        		<apex:commandButton action="{!doDelete}" value="Delete Customer Document" 
+        				style="background:#0c49ad;padding:6px;color:white;border:2px solid #2196F3" />
+        	</div>
+        </apex:form>
+
+	</apex:pageBlock>
+	
+
+		<!-- Below is Step 2 that shows up once the delete has been attempted -->
+
+		<apex:pageBlock rendered="{!documentDeleteAttempted && !errorEncountered}">
+    		
+    		<div class="padtop padbottom">
+        		<strong><p>The Customer Document has been successfully deleted.</p></strong>
+    		</div>
+    			
+    		<div class="padtop">
+        		<p>Note that the Customer Document will still appear on the Account until the
+        			Account page is refreshed in your browser.</p>
+    		</div>
+    		
+    		<apex:form >
+        		<div class="padtop centerme">
+        			<apex:commandButton action="{!goToAccount}" value="Return to Account" 
+        				style="background:#0c49ad;padding:6px;color:white;border:2px solid #2196F3" />
+        		</div>
+        	</apex:form>
+				
+		</apex:pageBlock>
+		
+		<apex:pageBlock rendered="{!documentDeleteAttempted && errorEncountered}">
+    			<apex:outputText value="There was a system error encountered.  Please contact Salesforce support." />
+    	</apex:pageBlock>
+         
+</apex:page>

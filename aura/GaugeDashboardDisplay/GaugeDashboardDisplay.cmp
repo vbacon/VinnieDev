@@ -1,0 +1,80 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" 
+                controller = "RiskCategoryPageNewController">
+    
+    <aura:attribute name="accountId" type="String" />
+    <aura:attribute name="scoreType" type="String" />
+    <aura:attribute name="isDataLoaded" type="Boolean" default="false"/>
+    <aura:attribute name="ovarAllRiskVal" type="String" />
+    <aura:attribute name="reputationalVal" type="String" />
+    <aura:attribute name="regulatoryVal" type="String" />
+    <aura:attribute name="ownershipVal" type="String" />
+    <aura:attribute name="operationsVal" type="String" />
+    <aura:attribute name="transactionalVal" type="String" />
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>   
+    
+    <aura:if isTrue="{!v.isDataLoaded}">
+        <div class="canvasCont">
+            <div class="canvesTextLg">
+                <div>
+                    <c:GaugeDashboard componentValue="{!v.ovarAllRiskVal}"
+                                      componentName="Overall Risk Score"
+                                      height="130"
+                                      width="250"
+                                      canvasId="mainScoreId">
+                    </c:GaugeDashboard>
+                </div>
+            </div>
+            
+            <div class="canvesText">
+                <c:GaugeDashboard componentValue="{!v.reputationalVal}"
+                                  componentName="Reputational"
+                                  height="130"
+                                  width="250"
+                                  canvasId="ReputationId">
+                </c:GaugeDashboard>
+            </div>
+        </div>
+        
+        <div class="canvasCont">
+            <div class="canvesText">
+                <c:GaugeDashboard componentValue="{!v.regulatoryVal}"
+                                  componentName="Regulatory"
+                                  height="130"
+                                  width="250"
+                                  canvasId="regulatoryId">
+                </c:GaugeDashboard>
+            </div>
+            
+            <div class="canvesText">
+                <c:GaugeDashboard componentValue="{!v.ownershipVal}"
+                                  componentName="Ownership"
+                                  height="130"
+                                  width="250"
+                                  canvasId="OwnershipId">
+                </c:GaugeDashboard>            
+            </div>
+        </div>
+        
+        <div class="canvasCont">
+            <div class="canvesText">
+                <c:GaugeDashboard componentValue="{!v.operationsVal}"
+                                  componentName="Operations"
+                                  height="130"
+                                  width="250"
+                                  canvasId="OperationsId">
+                </c:GaugeDashboard>
+            </div>
+            
+            <div class="canvesText">
+                <c:GaugeDashboard componentValue="{!v.transactionalVal}"
+                                  componentName="Transactional"
+                                  height="130"
+                                  width="250"
+                                  canvasId="TransitionalId">
+                </c:GaugeDashboard>
+            </div>
+        </div>
+    </aura:if>
+   
+</aura:component>

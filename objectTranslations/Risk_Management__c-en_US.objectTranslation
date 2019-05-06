@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Risk Management</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Risks Management</value>
+    </caseValues>
+    <fields>
+        <label><!-- Level --></label>
+        <name>Level__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Stage --></label>
+        <name>Opportunity_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Risks Management --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Risk Dimension --></label>
+        <name>Risk_Dimension__c</name>
+        <picklistValues>
+            <masterLabel>Credit Details</masterLabel>
+            <translation><!-- Credit Details --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Details</masterLabel>
+            <translation><!-- Financial Details --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Details</masterLabel>
+            <translation><!-- Legal Details --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Location Details</masterLabel>
+            <translation><!-- Location Details --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Details</masterLabel>
+            <translation><!-- Product Details --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regulatory</masterLabel>
+            <translation><!-- Regulatory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related Parties</masterLabel>
+            <translation><!-- Related Parties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tax Details</masterLabel>
+            <translation><!-- Tax Details --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultimate Beneficial Ownership</masterLabel>
+            <translation><!-- Ultimate Beneficial Ownership --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight Hidden --></label>
+        <name>Weight_Hidden__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight --></label>
+        <name>Weight__c</name>
+        <picklistValues>
+            <masterLabel>10%</masterLabel>
+            <translation><!-- 10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15%</masterLabel>
+            <translation><!-- 15% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20%</masterLabel>
+            <translation><!-- 20% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25%</masterLabel>
+            <translation><!-- 25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30%</masterLabel>
+            <translation><!-- 30% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35%</masterLabel>
+            <translation><!-- 35% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40%</masterLabel>
+            <translation><!-- 40% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5%</masterLabel>
+            <translation><!-- 5% --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Risk Management Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t create a risk dimension in this stage of the opportunity --></errorMessage>
+        <name>Account_Initiation_doesnt_apply_RiskDim</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t create a risk dimension in this stage of the opportunity --></errorMessage>
+        <name>Application_in_progress_not_RiskDim</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t create a risk dimension in this stage of the opportunity --></errorMessage>
+        <name>Initial_Validation_doesnt_apply_RiskDim</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t create a risk dimension in this stage of the opportunity --></errorMessage>
+        <name>Manager_Review_doesnt_apply_RiskDim</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t create a risk dimension in this stage of the opportunity --></errorMessage>
+        <name>Onsite_Interview_doesnt_apply_RiskDim</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t create a risk dimension in this stage of the opportunity --></errorMessage>
+        <name>Phone_Interview_doesnt_apply_RiskDim</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t create a risk dimension in this stage of the opportunity --></errorMessage>
+        <name>Rejected_doesnt_apply_RiskDim</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Risk Dimension must match the Opportunity Stage --></errorMessage>
+        <name>Risk_Dimension_Equals_Credit_Details</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Risk Dimension must match the Opportunity Stage --></errorMessage>
+        <name>Risk_Dimension_Equals_Financial_Details</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Risk Dimension must match the Opportunity Stage --></errorMessage>
+        <name>Risk_Dimension_Equals_Legal_Details</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Risk Dimension must match the Opportunity Stage --></errorMessage>
+        <name>Risk_Dimension_Equals_Location_Details</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Risk Dimension must match the Opportunity Stage --></errorMessage>
+        <name>Risk_Dimension_Equals_Product_Details</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Risk Dimension must match the Opportunity Stage --></errorMessage>
+        <name>Risk_Dimension_Equals_Related_Parties</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Risk Dimension must match the Opportunity Stage --></errorMessage>
+        <name>Risk_Dimension_Equals_Tax_Details</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Risk Dimension must match the Opportunity Stage --></errorMessage>
+        <name>Risk_Dimension_Equals_UBO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Risk Dimension must match the Opportunity Stage --></errorMessage>
+        <name>Risk_Dimension_equals_Regulatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t create a risk dimension in this stage of the opportunity --></errorMessage>
+        <name>Score_Calculation_doesnt_apply_RiskDim</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sub Category History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sub Category History</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date Computed --></label>
+        <name>Date_Computed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Category Name --></label>
+        <name>Model_Category_Definition_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Category Definition --></label>
+        <name>Model_Category_Definition__c</name>
+        <relationshipLabel><!-- Sub Category History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Model Sub Category Definition --></label>
+        <name>Model_Sub_Category_DefinitionLookup__c</name>
+        <relationshipLabel><!-- Sub Category History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Model Sub Category Definition --></label>
+        <name>Model_Sub_Category_Definition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Score__c</name>
+        <relationshipLabel><!-- Sub Category History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sub Category Score --></label>
+        <name>Sub_Category_Score__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

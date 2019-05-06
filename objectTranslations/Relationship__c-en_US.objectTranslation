@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address 1 --></label>
+        <name>Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address 2 (optional) --></label>
+        <name>Address_2_optional__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved_For_Sync --></label>
+        <name>Approved_For_Sync__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average_Total_Payment_PerMonth_Pay --></label>
+        <name>Average_Total_Payment_PerMonth_Pay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average_Total_Payment_PerMonth_Receive --></label>
+        <name>Average_Total_Payment_PerMonth_Receive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average_transaction_Size_Pay --></label>
+        <name>Average_transaction_Size_Pay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average_transaction_Size_Receive --></label>
+        <name>Average_transaction_Size_Receive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Address 1 --></label>
+        <name>Billing_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Address 2 optional --></label>
+        <name>Billing_Address_2_optional__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing City --></label>
+        <name>Billing_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing State --></label>
+        <name>Billing_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Zip --></label>
+        <name>Billing_Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Edit Pending --></label>
+        <name>Client_Edit_Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client name --></label>
+        <name>Client_name__c</name>
+        <relationshipLabel><!-- Partner Relationships Added by Client --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Compliance Approved --></label>
+        <name>Compliance_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Edit Enabled --></label>
+        <name>Customer_Edit_Enabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doing business as --></label>
+        <name>Doing_business_as__c</name>
+    </fields>
+    <fields>
+        <label><!-- DollarLimit_Per_Month_Pay --></label>
+        <name>DollarLimit_Per_Month_Pay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dollar_Limit_per_Month_Receive --></label>
+        <name>Dollar_Limit_per_Month_Receive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Diligence Complete --></label>
+        <name>Due_Diligence_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- EIN --></label>
+        <name>EIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Established year --></label>
+        <name>Established_year__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExternalId --></label>
+        <name>ExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handles Security --></label>
+        <name>Handles_Security__c</name>
+    </fields>
+    <fields>
+        <label><!-- ID (SSN, DL, Passport) --></label>
+        <name>ID_SSN_DL_Passport__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this a  Majurana related business? --></help>
+        <label><!-- Is_MRB --></label>
+        <name>Is_MRB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is_Partner --></label>
+        <name>Is_Partner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Landlord --></label>
+        <name>Landlord__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Client Update Time --></label>
+        <name>Last_Client_Update_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal company name --></label>
+        <name>Legal_company_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ownership of Business --></label>
+        <name>Ownership_of_Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ownership percentage flag --></label>
+        <name>Ownership_percentage_flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Name --></label>
+        <name>Partner_Name__c</name>
+        <relationshipLabel><!-- Added as a partner of --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship description --></label>
+        <name>Relationship_description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LE Owner</masterLabel>
+            <translation><!-- LE Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landlord</masterLabel>
+            <translation><!-- Landlord --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lender</masterLabel>
+            <translation><!-- Lender --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Occupation</masterLabel>
+            <translation><!-- Occupation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security</masterLabel>
+            <translation><!-- Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor</masterLabel>
+            <translation><!-- Vendor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Los Angeles</masterLabel>
+            <translation><!-- Los Angeles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taxes</masterLabel>
+            <translation><!-- Taxes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Transaction_Limit_Pay --></label>
+        <name>Transaction_Limit_Pay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction_Limit_Receive --></label>
+        <name>Transaction_Limit_Receive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction_Limits_Per_Month_Pay --></label>
+        <name>Transaction_Limits_Per_Month_Pay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction_Limits_per_month_Receive --></label>
+        <name>Transaction_Limits_per_month_Receive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Type --></label>
+        <name>Transaction_Type__c</name>
+        <picklistValues>
+            <masterLabel>Both</masterLabel>
+            <translation><!-- Both --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound ,Outbound, Both</masterLabel>
+            <translation><!-- Inbound ,Outbound, Both --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Transactions_Per_Month_Pay --></label>
+        <name>Transactions_Per_Month_Pay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transactions_Per_Month_Receive --></label>
+        <name>Transactions_Per_Month_Receive__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Update_Required --></label>
+        <name>Update_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip --></label>
+        <name>Zip__c</name>
+    </fields>
+    <layouts>
+        <layout>Individual</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Relationship object Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- company --></label>
+        <name>company</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- individual --></label>
+        <name>individual</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

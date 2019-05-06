@@ -1,0 +1,16 @@
+<aura:component implements="force:lightningQuickAction">
+    
+    <ltng:require scripts="{!$Resource.gaugeChart}"
+                  afterScriptsLoaded="{!c.gaugeSetup}" />
+    
+    <aura:attribute name="componentName" type="String"/>
+    <aura:attribute name="componentValue" type="String"/>
+    <aura:attribute name="height" type="String"/>
+    <aura:attribute name="width" type="String"/>
+    <aura:attribute name="canvasId" type="String"/>
+    
+    <span>{!v.componentName}</span>
+    <span></span>
+    <canvas id="{!v.canvasId}" width="{!v.width}"  height="{!v.height}"/>
+    <span>{!v.componentValue}</span>
+</aura:component>
